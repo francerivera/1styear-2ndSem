@@ -1,0 +1,30 @@
+RSA Algorithm
+P and q = random primes n = p * q
+r = (p – 1)(q – 1)
+e = 3, 5, 17, or 65537
+d = e-1 mod(r)
+Encryption: me mod(n)
+Decryption: cd mod(n)
+
+
+P = 11
+q = 3
+n = 33
+r = 20
+e = 3
+d = 7
+m = “rivera”
+Convert to ASCII: “rivera” = (114, 105, 118, 101, 114, 97)
+m = 11410511810111497
+
+
+Encryption:
+ciphertext = me mod(n)
+c = 114105118101114973 mod (33)
+c ≈ 12
+Send the ciphertext c to the receiver who has the corresponding private key pair (d, n).
+Decryption:
+message = cd mod(n) m = 127 mod (33)
+m ≈ 11410511810111497
+The receiver can convert the number m back to the message by using the same encoding technique as the sender.
+11410511810111497 is split into 114, 105, 118, 101, 114, 97, which are converted to “rivera”. This is the original message.
