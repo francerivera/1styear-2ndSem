@@ -12,7 +12,7 @@ def introduce(self):
     print(f"Testing Student: {id_number} - {name} - {course}")
         
 def validate_info() -> None:
-    if len(id_number) == 9 and name.isalpha:
+    if len(id_number) == 9 and name.isalpha():
         print ("Student information is valid.")
     else:
         print("Student information is not valid.")
@@ -35,7 +35,7 @@ def __str__() -> str:
     print(f"Testing Student: {id_number} - {name} - {course}")
         
 def validate_info() -> None:
-    if len(id_number) == 9 and name.isalpha:
+    if len(id_number) == 9 and name.isalpha():
         print ("Student information is valid.")
     else:
         print("Student information is not valid.")
