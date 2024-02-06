@@ -3,20 +3,21 @@ class student:
         self.id_number = id_number
         self.name = name
         self.course = course
+
+    def __str__() -> str:
+        return f"Testing Student: {id_number} - {name} - {course}")
         
+    def validate_info() -> None:
+        if len(id_number) == 9 and name.isalpha():
+            print ("Student information is valid.")
+        else:
+            print("Student information is not valid.")
+
 id_number = input("ID Number: ")
 name = str(input("Name: "))   
 course = str(input("Course: "))
 
-def introduce(self):
-    print(f"Testing Student: {id_number} - {name} - {course}")
-        
-def validate_info() -> None:
-    if len(id_number) == 9 and name.isalpha():
-        print ("Student information is valid.")
-    else:
-        print("Student information is not valid.")
-
+__str__()
 validate_info()
 
 or
