@@ -19,4 +19,4 @@ profile.validate_info()
 
 ph_timezone = pytz.timezone('Asia/Manila')
 time_in_ph = datetime.datetime.now(ph_timezone)
-print(time_in_ph.strftime(format = "%Y-%m-%d %H:%M"))
+print(time_in_ph.strftime(format = "%B %d, %Y  %H:%M"))
