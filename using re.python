@@ -1,0 +1,32 @@
+import re
+import pytz
+import datetime
+user = str(input("Choose from these options:\n(a) Utilize a string scanner\n(b) Eliminate negativity from strings\n(c) Extract substrings.\nYour choice: ")).lower()
+
+def str_scanner():
+    if user == 'a':
+        scanner = str(input("Enter a string: "))
+        if re.match("^[a-z]+.*\W$", scanner):
+            print("Valid string!")
+        else:
+            print("Invalid string!")
+        
+def rem_nega():
+    if user == 'b':
+        rem = str(input("Enter a paragraph: "))
+        updated = re.sub("fuck|nigga|nigger|hate|punch|rant|angry|bully","-", rem, flags = re.IGNORECASE)
+        print("Updated paragraph:",updated)
+                
+def sub_string():
+    if user == 'c':
+        stringa = str(input("Enter string a: "))
+        stringb = str(input("Enter string b: "))
+        found = re.match(stringb,stringa)
+        if found:
+            print(f"{stringb} found in {stringa}")
+        else:
+            print(f"{stringb} not found in {stringa}")
+    
+str_scanner()
+rem_nega()
+sub_string()
