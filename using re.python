@@ -1,7 +1,8 @@
 import re
 import pytz
 import datetime
-user = str(input("Choose from these options:\n(a) Utilize a string scanner\n(b) Eliminate negativity from strings\n(c) Extract substrings.\nYour choice: ")).lower()
+
+user = str(input("Choose a letter from these options:\n(a) Utilize a string scanner.\n(b) Eliminate negativity from strings.\n(c) Extract substrings.\nYour choice: ")).lower()
 
 def str_scanner():
     if user == 'a':
@@ -14,7 +15,7 @@ def str_scanner():
 def rem_nega():
     if user == 'b':
         rem = str(input("Enter a paragraph: "))
-        updated = re.sub("fuck|nigga|nigger|hate|punch|rant|angry|bully","-", rem, flags = re.IGNORECASE)
+        updated = re.sub("fuck|nigga|nigger|hate|punch|rant|angry|bully|idiot|stupid","-", rem, flags = re.IGNORECASE)
         print("Updated paragraph:",updated)
                 
 def sub_string():
@@ -27,6 +28,14 @@ def sub_string():
         else:
             print(f"{stringb} not found in {stringa}")
     
+    ph_timezone = pytz.timezone('Asia/Manila')
+    time_in_ph = datetime.datetime.now(ph_timezone)
+    print(time_in_ph.strftime(format = "%B %d, %Y  |  %H:%M"))
+
+choices = ['a','b','c']
+if user not in choices:
+    print(f"there is no {user} in the options.")
+
 str_scanner()
 rem_nega()
 sub_string()
