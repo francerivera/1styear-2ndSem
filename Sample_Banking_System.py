@@ -2,10 +2,7 @@ import random
 import datetime
 import pytz
 
-class BankAccount:
-    total_deposits = 0
-    total_withdraws = 0
-    
+class BankAccount:    
     def __init__(self, account_number, account_holder, balance = 0):
         self.account_number = account_number
         self.account_holder = account_holder
@@ -13,7 +10,6 @@ class BankAccount:
 
     def deposit(self, amount):
         self.balance += amount
-        self.total_deposits += 1 
         return f"Your current balance is now: ${round(self.balance, 2)}"
         
     def withdraw(self, amount): 
@@ -22,7 +18,6 @@ class BankAccount:
             print("Insufficient funds | Balance available: $", self.balance)
         else:
             self.balance -= amount 
-            self.total_withdraws += 1
             print(time_in_ph.strftime(format = "%B %d, %Y  |  %H:%M"))
             print(f"Withdrawal of {amount} successful. Current Balance: $", self.balance) 
     
