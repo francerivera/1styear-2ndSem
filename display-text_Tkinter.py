@@ -41,3 +41,41 @@ def GUI():
 
 GUI()
 root.mainloop()
+
+
+****************************
+
+    
+import tkinter as tk
+from tkinter import ttk
+import re
+
+
+class MainWindows(tk.Tk):
+
+    def __init__(self):
+        super().__init__()
+
+        self.frame_main = ttk.Frame(self)
+
+        self.button_display = ttk.Button(self.frame_main, text="Display Text")
+
+        self.label_text = ttk.Label(self.frame_main, text="Hello!")
+
+
+
+        self.frame_main.pack(fill=tk.BOTH, expand=True)
+        self.button_display.pack()
+        self.label_text.pack()
+
+
+    def get_words_btn(self):
+        pass
+
+
+
+
+
+if __name__ == "__main__":
+    main_window = MainWindows()
+    main_window.mainloop()
