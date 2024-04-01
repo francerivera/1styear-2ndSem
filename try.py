@@ -76,5 +76,25 @@ button = Button(root, text="Get Selected Size", command=show_selected_size)
 button.pack(fill="x", padx=6, pady=6)
 
 
+############
+
+def item_click():
+    print("Menu item clicked!")
+
+
+menu = Menu(root)
+
+menu.add_command(label="tao", command=item_click)
+menu.add_command(label="bagay", command=item_click)
+menu.add_command(label="hayop", command=item_click)
+
+submenu = Menu(menu)
+submenu.add_command(label="France", command=item_click)
+submenu.add_command(label="Rivera", command=item_click)
+
+menu.add_cascade(label="Submenu", menu=submenu)
+
+root.config(menu=menu)
+
 root.mainloop()
 
