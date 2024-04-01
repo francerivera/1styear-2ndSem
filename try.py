@@ -27,5 +27,54 @@ window.mainloop()
 
 ##############
 
+from tkinter import *
 
+root = Tk()
+
+def toggle():
+    if check_var.get():
+        label.config(text="Feature Enabled")
+    else:
+        label.config(text="Feature Disabled")
+
+
+check_var = BooleanVar()
+checkbutton = Checkbutton(root, text="Enable Feature", variable=check_var, command=toggle)
+checkbutton.pack()
+
+label = Label(root, text="Feature Disabled ")
+label.pack()
+
+root.mainloop()
+
+#################
+
+from tkinter import *
+from tkinter.messagebox import showinfo
+
+
+root = Tk()
+root.geometry("500x300")
+root.resizable(False, False)
+root.title("Radio Button Demo")
+
+
+def show_selected_size():
+    showinfo(title='Result', message=selected_size.get())
+
+selected_size = StringVar()
+sizes = (("Small","S"),("Medium", "M"),("Large","L"),("Extra Large","XL"))
+
+label = Label(text="What's your size?")
+label.pack(fill="x", padx=6, pady=6)
+
+for size in sizes:
+    r = Radiobutton(root, text=size[0], value=size[1], variable=selected_size)
+    r.pack(fill="x", padx=6, pady=6)
+
+button = Button(root, text="Get Selected Size", command=show_selected_size)
+button.pack(fill="x", padx=6, pady=6)
+
+
+root.mainloop()
 
