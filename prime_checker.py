@@ -7,8 +7,8 @@ if num == 1:
 elif num > 1:
   for i in range(2, num):
     if (num % i) == 0:
-      flas = True
-      breal
+      flag = True
+      break
 
   if flag:
     print(num, "is not a prime number.")
