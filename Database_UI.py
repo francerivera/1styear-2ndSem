@@ -50,5 +50,52 @@ def update_age():
     age_entry.delete(0, tk.END)
   else:
     messagebox.showerror("Error", "Please enter both name and new age.")
-  
-asd
+
+def show_users():
+  users=fetch_all_users(conn)
+  if users:
+    users_list_delete(0, tk.END)
+    for user in users:
+      user_list.insert(tk.END, user)
+  else:
+    messagebox.showinfo("Info", "No users found.")
+
+def exit_app():
+  conn.close()
+  root.destroy()
+
+conn = sqlite3.connect('inventory.db')
+create_table(conn)
+
+root = tk.Tk()
+root.title("User Database")
+
+name_label = tk.Label(rootm text="Name")
+name_label.grid(row=0, column=0, padx=5, pady=5)
+name_entry = tk.Entry(root)
+name_entry.grid(row=0, column=1, padx=5, pady=5)
+
+age_label = tk.Label(root, text="Age")
+age_label.grid(row=1, column=0, padx=5, pady=5)
+age_entry = tk.Entry(root)
+age_entry.grid(row=1, column=1, padx=5, pady=5)
+
+add_button = tk.Button(root, text="Add User", command=add_user)
+add_button.grid(row=2, column=0, columnspan=2, padx=5, pady=5, sticky="WE")
+
+update_button = tk.Button(root, text="Update Age", command=update_age)
+update_button.grid(row=3, column=0, columnspan=2, padx=5, pady=5, sticky="WE")
+
+show_button = tk.Button(root, text="Show Users", command=show_users)
+show_button.grid(row=4, column=0, columnspan=2, padx=5, pady=5, sticky="WE")
+
+user_list = tk.Listbox(roow, width=50)
+user_list.grid(row=5, column=0, columspan=2, padx=5, pady=5)
+
+exit_button = tk.Button(root, text="Exit", command=exit_app)
+exit_button.grid(row=6, column=0, columnspan=2, padx=5, pady=5, sticky="WE")
+
+root.mainloop()
+
+
+
